@@ -178,5 +178,3 @@ function paraIndices(){
     	console.log(oParaIndexList[i]);
 }
 
-
-<!-- GD2md-html version 1.0β11 -->

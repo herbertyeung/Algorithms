@@ -24,9 +24,9 @@ runHTMLDialogCef (sHTMLFileName, Flags, isModal, [dialogParam])
 
 **Flags** has two values 0 and 1. 1 means that the dialog is resizable.
 
-**isModal's **type** **is bool. TRUE means that the dialog is modal dialog. FALSE means it is modeless dialog.
+**isModal's** type is bool. TRUE means that the dialog is modal dialog. FALSE means it is modeless dialog.
 
-**dialogParam **is optional, and it is a string of JavaScript that can be passed into the HTML file.
+**dialogParam** is optional, and it is a string of JavaScript that can be passed into the HTML file.
 
 
 ### Return Value

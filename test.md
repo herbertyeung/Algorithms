@@ -57,9 +57,7 @@ function LaunchCEFDialog() {
 
 ## Debugging JavaScript in CEF Dialog
 
-Debugging in CEF Dialog is totally different from ActiveScript or JsRT. The debugger keyword is not available in CEF Dialog. You should use DevTools to debug the JavaScript.
-
-**Note: The JavaScript in CEF Dialog is case-sensitive and all the CV APIs (without argument) must be ended with parentheses ().**
+Debugging in CEF Dialog is totally different from ActiveScript or JsRT. You should use DevTools to debug the JavaScript.
 
 
 ### Turn on the DevTools
@@ -69,14 +67,9 @@ To turn on or turn off the DevTools, setting the **EnableCefDevTools** to 1 or 0
 
 ### Using DevTools to debug
 
-There're two ways to open DevTools, one is right click in the CEF Dialog and select Show DevTools on the context menu; the other is to use Ctrl + F12.
+Right click in the CEF Dialog and select Show DevTools on the context menu to open the DevTools.
 
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/How-to0.png "image_tooltip")
+![alt_text](cef_images/1.png "DevTools")
 
 
 
@@ -85,21 +78,13 @@ Click the Sources tab to show the source codes.
 
 
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to1.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/How-to1.png "image_tooltip")
+![alt_text](cef_images/2.png "DevTools")
 
 
 The Sources panel UI has 3 parts.
 
 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to2.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/How-to2.png "image_tooltip")
-
+![alt_text](cef_images/3.png "DevTools")
 
 
 
@@ -113,14 +98,10 @@ Set a breakpoint.
 
 In **Code Editor** Pane, clicking the line number to set a breakpoint in the JavaScript source code. 
 
-**Note: CEF Dialog does NOT support debugger keyword**.
+**Note: The debugger keyword works only when the DevTools opened**.
 
 
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to3.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/How-to3.png "image_tooltip")
+![alt_text](cef_images/4.png "DevTools")
 
 
 You need to reload HTML file when you open the DevTools for showing the source codes.
@@ -177,4 +158,22 @@ function paraIndices(){
     for(i = 0; i < oParaIndexList.Length; i++)
     	console.log(oParaIndexList[i]);
 }
+```
 
+
+
+## ActiveXObject in CEF Dialog
+
+The ActiveX object has been deprecated in CEF Dialog, but you could use Application.addActiveXObj API to add a WP ActiveX object into HTML.
+
+** **
+
+
+## The important you need to be aware
+
+
+
+*   **The JavaScript in CEF Dialog is case-sensitive and all the CV APIs (without argument) must be ended with parentheses ().**
+*   **Some CV APIS, like doc.MessageBox that can pop up a window, will block the script, which means that the JavaScript will stop running and wait for the response. This will cause the CV API execution timeout if there is no response for a long time (more than 500 seconds).  Avoid using this kind of APIs and try to use HTML code instead. You could use JavaScript alert or confirm to instead of MessageBox, or using HTML and CSS to create a message box.**
+
+<!-- GD2md-html version 1.0β11 -->

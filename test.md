@@ -12,7 +12,7 @@ In CaseView, using Application. runHTMLDialogCef API to launch CEF Dialog to sho
 ### Syntax
 
 
-```
+```javascript
 runHTMLDialogCef (sHTMLFileName, Flags, isModal, [dialogParam])
 ```
 
@@ -42,7 +42,7 @@ All the CaseView APIs and Objects only can be accessed in a modal CEF dialog. It
 ### Example
 
 
-```
+```javascript
 function LaunchCEFDialog() {
     // the HTML file's name
     var src = "file:///D:/test.html";
@@ -128,7 +128,7 @@ In CEF dialog, it doesn't support Date.getVarDate() method, since getVarDate() i
 Let's see the following sample code.
 
 
-```
+```javascript
 function SetCellDateVale()
 {
      //First, get cell
@@ -149,7 +149,7 @@ In CEF Dialog, the **VBArray** is not supported and you don't even have to use *
 For instance: The API Document.paraIndicesByCell.
 
 
-```
+```javascript
 function paraIndices(){
     //Get the Index List
     //the return type of paraIndicesByCell is JavaScript array.

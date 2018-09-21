@@ -166,14 +166,15 @@ function paraIndices(){
 
 The ActiveX object has been deprecated in CEF Dialog, but you could use Application.addActiveXObj API to add a WP ActiveX object into HTML.
 
-** **
 
 
 ## The important you need to be aware
 
 
 
+
 *   **The JavaScript in CEF Dialog is case-sensitive and all the CV APIs (without argument) must be ended with parentheses ().**
+
 *   **Some CV APIS, like doc.MessageBox that can pop up a window, will block the script, which means that the JavaScript will stop running and wait for the response. This will cause the CV API execution timeout if there is no response for a long time (more than 500 seconds).  Avoid using this kind of APIs and try to use HTML code instead. You could use JavaScript alert or confirm to instead of MessageBox, or using HTML and CSS to create a message box.**
 
 <!-- GD2md-html version 1.0β11 -->

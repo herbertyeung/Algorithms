@@ -1,18 +1,18 @@
 
-# How to use CaseView APIs in CEF Dialog
+# How to use CaseView APIs in the CEF dialog
 
-The CEF Dialog has been improved and supports most CaseView APIs and objects in WP2018 update 1. You can use CaseView APIs in HTML and JavaScript when you launch the CEF Dialog by the runHTMLDialogCef() API.
+The CEF dialog has been improved and supports most CaseView APIs and objects in WP2018 Update 1. You can use CaseView's APIs in HTML and JavaScript on the CEF Dialog.
 
 
-## Lanuch CEF Dialog
+## Opening the CEF dialog
 
-In CaseView, using Application. runHTMLDialogCef API to launch CEF Dialog to show the HTML file.
+In CaseView, use Application. runHTMLDialogCef() API to launch the CEF dialog.
 
 
 ### Syntax
 
 
-```javascript
+```
 runHTMLDialogCef (sHTMLFileName, Flags, isModal, [dialogParam])
 ```
 
@@ -20,29 +20,29 @@ runHTMLDialogCef (sHTMLFileName, Flags, isModal, [dialogParam])
 
 ### Parameters
 
-**sHTMLFileName** is the URL or file name of a HTML file.
+**sHTMLFileName** - the URL or HTML filename.
 
-**Flags** has two values 0 and 1. 1 means that the dialog is resizable.
+**Flags** - two possible values, 0 and 1. 1 indicates that the dialog is resizable.
 
-**isModal's** type is bool. TRUE means that the dialog is modal dialog. FALSE means it is modeless dialog.
+**isModal's **-** **type** **is bool. TRUE indicates the dialog is modal. FALSE indicates a non-modal dialog.
 
-**dialogParam** is optional, and it is a string of JavaScript that can be passed into the HTML file.
+**dialogParam **-** **optional. A JavaScript string that can be passed to the HTML file.
 
 
 ### Return Value
 
-This API returns string value.
+Returns a string.
 
 
-### Remarks
+### Notes
 
-All the CaseView APIs and Objects only can be accessed in a modal CEF dialog. It means that the **isModal **must be set TRUE when calling this API.
+CaseView APIs and objects can only be accessed in a modal CEF dialog.
 
 
 ### Example
 
 
-```javascript
+```
 function LaunchCEFDialog() {
     // the HTML file's name
     var src = "file:///D:/test.html";
@@ -55,80 +55,95 @@ function LaunchCEFDialog() {
 
 
 
-## Debugging JavaScript in CEF Dialog
+## Debugging JavaScript in the CEF dialog
 
-Debugging in CEF Dialog is totally different from ActiveScript or JsRT. You should use DevTools to debug the JavaScript.
+Debugging the CEF dialog is totally different from ActiveScript or JsRT. Use DevTools when debugging.
 
 
-### Turn on the DevTools
+### Enablging DevTools
 
-To turn on or turn off the DevTools, setting the **EnableCefDevTools** to 1 or 0 in CV.VER, by default the DevTools is hidden.
+To enable DevTools, set **EnableCefDevTools** to 1 in CV.VER. By default, DevTools is hidden, i.e. set to 0.
 
 
 ### Using DevTools to debug
 
-Right click in the CEF Dialog and select Show DevTools on the context menu to open the DevTools.
+Right click in the CEF dialog and click **Show DevTools **on the context menu to open DevTools.
 
-![alt_text](cef_images/1.png "DevTools")
-
-
+<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-Click the Sources tab to show the source codes.
+![alt_text](images/How-to0.png "image_tooltip")
 
 
 
-![alt_text](cef_images/2.png "DevTools")
+
+Click the **Sources **tab to show the source codes.
 
 
-The Sources panel UI has 3 parts.
+
+<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to1.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](cef_images/3.png "DevTools")
+![alt_text](images/How-to1.png "image_tooltip")
+
+
+The Sources UI has 3 parts:
+
+
+
+<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to2.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/How-to2.png "image_tooltip")
+
 
 
 
 1.  The **File Navigator** pane. Every file that the page requests is listed here.
-1.  The **Code Editor** pane. After selecting a file in the **File Navigator pane**, the contents of that file are displayed here.
-1.  The **JavaScript Debugging** pane. Various tools for inspecting the page's JavaScript.
+1.  The **Code Editor** pane. After selecting a file in the **File Navigator pane**, the content of the file isdisplayed here.
+1.  The **JavaScript Debugging** pane. Various tools for inspecting a page's JavaScript.
 
 
 
-Set a breakpoint.
+Setting a breakpoint.
 
-In **Code Editor** Pane, clicking the line number to set a breakpoint in the JavaScript source code. 
+In the **Code Editor** pane, clicking the line number will set a breakpoint in the JavaScript source code. 
 
-**Note: The debugger keyword works only when the DevTools opened**.
-
-
-![alt_text](cef_images/4.png "DevTools")
-
-
-You need to reload HTML file when you open the DevTools for showing the source codes.
+**Note: The debugger keyword only works when DevTools is opened**.
 
 
 
-
-## The undefined method or property
-
-If you encounter the undefined error when you call a method or property of a CV object, you should ensure that the name of the method or property is correct. You could use DevTools to check the name by following steps.
+<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to3.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-
-1.  Open the DevTools.
-1.  Set a breakpoint on the line that calls the method of property.
-1.  Active the breakpoint and move the mouse cursors to the CV object which includes the method or property.
-1.  The detail window of the object will show up, the comparing the name and find the correct name.
+![alt_text](images/How-to3.png "image_tooltip")
 
 
-## Date type in CEF Dialog
-
-In CEF dialog, it doesn't support Date.getVarDate() method, since getVarDate() is supported in Internet Explorer only. You should use the JavaScript Date object instead of getVarDate().
-
-Let's see the following sample code.
+You need to reload the HTML file when you open DevTools in order to show the source code.
 
 
-```javascript
+
+
+## Undefined method or property
+
+If you encounter an undefined error when you call a method or property of a CV object, ensure that the name of the method or property is correct. You can use DevTools to verify the name as follows:
+
+
+
+1.  Open DevTools.
+1.  Set a breakpoint on the line that calls the method or property.
+1.  Activate the breakpoint and move the mouse cursor to the CV object which includes the method or property.
+1.  The Detail window of the object will display..
+
+
+## Date type in the CEF dialog
+
+The CEF dialog does not support the **Date.getVarDate()** method because getVarDate() is supported in Internet Explorer only. Use the JavaScript Date object instead.
+
+Example:
+
+
+```
 function SetCellDateVale()
 {
      //First, get cell
@@ -142,14 +157,14 @@ function SetCellDateVale()
 
 
 
-## VBArray object in CEF Dialog
+## VBArray object in the CEF dialog
 
-In CEF Dialog, the **VBArray** is not supported and you don't even have to use **VBArray**. The return type of a CaseView API which returns an Array is a JavaScript array type now. You could directly use the result as an array.
+The CEF dialog does not support **VBArray** and is also not required. The return type of a CaseView API returning an Array is a JavaScript array. The result can be used as an array.
 
-For instance: The API Document.paraIndicesByCell.
+Example: Document.paraIndicesByCell.
 
 
-```javascript
+```
 function paraIndices(){
     //Get the Index List
     //the return type of paraIndicesByCell is JavaScript array.
@@ -162,19 +177,18 @@ function paraIndices(){
 
 
 
-## ActiveXObject in CEF Dialog
+## ActiveXObject in the CEF dialog
 
-The ActiveX object has been deprecated in CEF Dialog, but you could use Application.addActiveXObj API to add a WP ActiveX object into HTML.
+The ActiveX object has been deprecated in the CEF dialog but you can use the Application.addActiveXObj API to add a WP ActiveX object into an HTML file.
 
-
-
-## The important you need to be aware
+** **
 
 
+## Important Notes
 
 
-*   **The JavaScript in CEF Dialog is case-sensitive and all the CV APIs (without argument) must be ended with parentheses().**
 
-*   **Some CV APIS, like doc.MessageBox that can pop up a window, will block the script, which means that the JavaScript will stop running and wait for the response. This will cause the CV API execution timeout if there is no response for a long time (more than 500 seconds).  Avoid using this kind of APIs and try to use HTML code instead. You could use JavaScript alert or confirm to instead of MessageBox, or using HTML and CSS to create a message box.**
+*   **JavaScript in the CEF dialog is case-sensitive and all CV APIs (without argument) must end with parentheses ().**
+*   **Some CV APIS that can pop up a window, like doc.MessageBox, will block the script meaning that the JavaScript will stop running and will wait for a response. This will cause the CV API execution timeout if there is no response for a long period of time (more than 500 seconds).  Avoid using this kind of API and use HTML code instead. You could use JavaScript alert or confirm instead of MessageBox, or using HTML and CSS, create a message box.**
 
-<!-- GD2md-html version 1.0β11 -->
+

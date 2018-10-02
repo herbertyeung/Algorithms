@@ -1,5 +1,5 @@
 
-# How to use CaseView APIs in the CEF dialog
+# CaseView Scripting API in the CEF dialog
 
 The CEF dialog has been improved and supports most CaseView APIs and objects in WP2018 Update 1. You can use CaseView's APIs in HTML and JavaScript on the CEF Dialog.
 
@@ -24,9 +24,9 @@ runHTMLDialogCef (sHTMLFileName, Flags, isModal, [dialogParam])
 
 **Flags** - two possible values, 0 and 1. 1 indicates that the dialog is resizable.
 
-**isModal's **-** **type** **is bool. TRUE indicates the dialog is modal. FALSE indicates a non-modal dialog.
+**isModal's** - typeis bool. TRUE indicates the dialog is modal. FALSE indicates a non-modal dialog.
 
-**dialogParam **-** **optional. A JavaScript string that can be passed to the HTML file.
+**dialogParam** -optional. A JavaScript string that can be passed to the HTML file.
 
 
 ### Return Value
@@ -69,33 +69,22 @@ To enable DevTools, set **EnableCefDevTools** to 1 in CV.VER. By default, DevToo
 
 Right click in the CEF dialog and click **Show DevTools **on the context menu to open DevTools.
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/How-to0.png "image_tooltip")
+![alt_text](cef_images/1.png "DevTools")
 
 
 
-
-Click the **Sources **tab to show the source codes.
-
+Click the **Sources** tab to show the source codes.
 
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to1.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/How-to1.png "image_tooltip")
+![alt_text](cef_images/2.png "DevTools")
 
 
 The Sources UI has 3 parts:
 
 
 
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to2.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/How-to2.png "image_tooltip")
-
+![alt_text](cef_images/3.png "DevTools")
 
 
 
@@ -113,14 +102,10 @@ In the **Code Editor** pane, clicking the line number will set a breakpoint in t
 
 
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/How-to3.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/How-to3.png "image_tooltip")
+![alt_text](cef_images/4.png "DevTools")
 
 
 You need to reload the HTML file when you open DevTools in order to show the source code.
-
 
 
 
@@ -181,7 +166,7 @@ function paraIndices(){
 
 The ActiveX object has been deprecated in the CEF dialog but you can use the Application.addActiveXObj API to add a WP ActiveX object into an HTML file.
 
-** **
+
 
 
 ## Important Notes
@@ -190,5 +175,3 @@ The ActiveX object has been deprecated in the CEF dialog but you can use the App
 
 *   **JavaScript in the CEF dialog is case-sensitive and all CV APIs (without argument) must end with parentheses ().**
 *   **Some CV APIS that can pop up a window, like doc.MessageBox, will block the script meaning that the JavaScript will stop running and will wait for a response. This will cause the CV API execution timeout if there is no response for a long period of time (more than 500 seconds).  Avoid using this kind of API and use HTML code instead. You could use JavaScript alert or confirm instead of MessageBox, or using HTML and CSS, create a message box.**
-
-
